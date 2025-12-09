@@ -49,7 +49,7 @@ body {
   align-items: center;
   gap: 14px;
 
-  background: linear-gradient(145deg, #f6f9ff, #edf2ff);
+  background: linear-gradient(145deg, #6699ff, #edf2ff);
   padding: 16px 18px;
   border-radius: 20px;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.07);
@@ -78,10 +78,348 @@ body {
   font-size: 22px;
 }
 
+/* MAIN wrapper */
+#youth-main {
+  padding: 40px 5vw 60px;
+  background: #eaf2ff;
+}
+
+/* Har bir section */
+.info-section {
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* IntersectionObserver qo‘shganda beriladigan class */
+.info-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section kartasi */
+.section-inner {
+  display: flex;
+  gap: 24px;
+  padding: 20px 24px;
+  border-radius: 22px;
+  background: #f8fbff;
+  box-shadow: 0 10px 24px rgba(12, 79, 144, 0.08);
+}
+
+/* Rasmlar blok */
+.section-image {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-image img {
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+/* Matn qismi */
+.section-content {
+  flex: 1;
+}
+
+/* Title – markazdan chiqish effekti */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0c4f90;
+  margin: 0 0 8px;
+  text-align: left;
+
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.6s ease 0.1s, opacity 0.6s ease 0.1s;
+}
+.info-section.visible .section-title {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Statistika qatori */
+.section-stat {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #12355b;
+}
+.section-stat .stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0c4f90;
+}
+
+/* Izoh va foyda ro‘yxati */
+.section-desc {
+  font-size: 14px;
+  color: #41546b;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.section-benefits {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #30445e;
+}
+.section-benefits li {
+  margin-bottom: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .section-inner {
+    flex-direction: column;
+  }
+  .section-image {
+    justify-content: flex-start;
+  }
+}
+/* =============================== */
+/* SECTION SIZE IMPROVEMENT PATCH */
+/* =============================== */
+
+/* Rasmlar kattalashadi */
+.section-image {
+  flex: 0 0 180px !important;
+}
+
+.section-image img {
+  max-height: 140px !important;
+}
+
+/* Title juda katta va jozibali bo‘ladi */
+.section-title {
+  font-size: 26px !important;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* Statistika matni yirik chiqadi */
+.section-stat {
+  font-size: 18px !important;
+}
+
+.section-stat .stat-number {
+  font-size: 30px !important;
+}
+
+/* Description – o‘qilishi qulay */
+.section-desc,
+.section-benefits {
+  font-size: 16px !important;
+  line-height: 1.6;
+}
+
+/* Har bir listingni ajratib ko‘rsatish */
+.section-benefits li {
+  margin-bottom: 6px;
+}
+
+/* Mobil versiya */
+@media (max-width: 900px) {
+  .section-title {
+    font-size: 22px !important;
+  }
+
+  .section-stat {
+    font-size: 16px !important;
+  }
+
+  .section-stat .stat-number {
+    font-size: 26px !important;
+  }
+
+  .section-image {
+    flex: 0 0 140px !important;
+  }
+
+  .section-image img {
+    max-height: 110px !important;
+  }
+}
+
 /* MATN */
 .metric-content {
   display: flex;
   flex-direction: column;
+}
+
+/* =============================== */
+/* MARQUEE IMAGE SECTION */
+/* =============================== */
+
+.marquee-section {
+  padding: 20px 0;
+}
+
+/* title markazda */
+.center-title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* marquee wrapper */
+.marquee-wrapper {
+  background: #ffffff;
+  padding: 16px 12px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(12, 79, 144, 0.08);
+}
+
+/* marquee ichidagi rasmlar */
+marquee img {
+  width: 130px; /* hammasi bir xil eni */
+  height: 80px; /* hammasi bir xil bo'yi */
+  object-fit: contain;
+  margin: 0 18px;
+
+  background: #f4f7ff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  marquee img {
+    width: 100px;
+    height: 60px;
+    margin: 0 10px;
+  }
+}
+
+/* =============================== */
+/* MARQUEE IMAGE SECTION – LARGE */
+/* =============================== */
+
+.marquee-section {
+  padding: 24px 0;
+}
+
+.center-title {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* ramka */
+.marquee-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(12, 79, 144, 0.08);
+}
+
+/* === MARQUEE IMAGE SIZE === */
+marquee img {
+  width: 400px; /* <<< KATTA RASMLAR */
+  height: 220px; /* proporsiyani ushlab turish */
+  object-fit: cover;
+  margin: 0 26px;
+
+  background: #f4f7ff;
+  padding: 12px;
+  border-radius: 16px;
+
+  box-shadow: 0 8px 18px rgba(12, 79, 144, 0.12);
+}
+
+/* mobile moslashuv */
+@media (max-width: 900px) {
+  marquee img {
+    width: 280px;
+    height: 160px;
+    margin: 0 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  marquee img {
+    width: 200px;
+    height: 120px;
+    margin: 0 14px;
+  }
+}
+
+/* =============================== */
+/* VIDEO SECTION STYLES */
+/* =============================== */
+
+.video-section {
+  margin-top: 32px;
+}
+
+/* section-inner varianti – faqat video bo‘lgani uchun biroz boshqa */
+.video-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.video-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* title markazda va kattaroq */
+.center-title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* video responsive va markazda */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 18px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(12, 79, 144, 0.2);
+  background: #000;
+}
+
+/* 16:9 nisbat – YouTube va boshqalar uchun */
+.video-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* matn biroz kattaroq va o‘qilishi oson */
+.video-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .video-content {
+    padding: 0 4px;
+  }
+
+  .center-title {
+    font-size: 20px;
+  }
+
+  .video-desc {
+    font-size: 15px;
+  }
 }
 
 /* ===== 5 ta card uchun grid sozlamasi ===== */
