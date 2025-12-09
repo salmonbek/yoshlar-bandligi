@@ -421,6 +421,117 @@ marquee img {
     font-size: 15px;
   }
 }
+/* =============================== */
+/* VIDEO GRID SECTION */
+/* =============================== */
+
+/* video-content endi grid bo‘ladi */
+.video-content {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* 3 ta ustun -> 2 qator bo'ladi (5 ta video uchun) */
+  gap: 20px;
+}
+
+/* video qutisi */
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(12, 79, 144, 0.18);
+}
+
+/* video ichida to'liq joylashadi */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* section pastidagi matnlar vídeosining o‘rtasiga to‘g‘ri tushishi uchun */
+.video-section .section-desc,
+.video-section .section-benefits {
+  max-width: 900px;
+  margin: 18px auto 0 auto;
+}
+
+/* RESPONSIVE */
+
+/* planshet */
+@media (max-width: 1000px) {
+  .video-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4 ta info-card uchun 3 ustunli grid */
+#section-job .section-inner,
+#section-skill .section-inner,
+#section-subsidy .section-inner,
+#section-credit .section-inner {
+  display: grid;
+  grid-template-columns: 190px 1fr 190px;
+  gap: 22px;
+  align-items: center;
+
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: #f8fbff;
+  box-shadow: 0 10px 24px rgba(12, 79, 144, 0.08);
+  margin-bottom: 24px;
+}
+
+/* Rasmlar (chap va o‘ng) */
+#section-job .section-image,
+#section-skill .section-image,
+#section-subsidy .section-image,
+#section-credit .section-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#section-job .section-image img,
+#section-skill .section-image img,
+#section-subsidy .section-image img,
+#section-credit .section-image img {
+  width: 180px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(12, 79, 144, 0.16);
+}
+
+/* RESPONSIVE – telefon / planshet */
+@media (max-width: 900px) {
+  #section-job .section-inner,
+  #section-skill .section-inner,
+  #section-subsidy .section-inner,
+  #section-credit .section-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #section-job .section-image img,
+  #section-skill .section-image img,
+  #section-subsidy .section-image img,
+  #section-credit .section-image img {
+    width: 240px;
+    height: 160px;
+  }
+}
+
+/* mobil */
+@media (max-width: 600px) {
+  .video-content {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ===== 5 ta card uchun grid sozlamasi ===== */
 
