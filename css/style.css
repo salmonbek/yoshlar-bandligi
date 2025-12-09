@@ -84,6 +84,40 @@ body {
   flex-direction: column;
 }
 
+/* ===== 5 ta card uchun grid sozlamasi ===== */
+
+.youth-header__strip {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* KARAMAY MASALA: chartlar bir xil chiziqda chiqishi */
+.metric-wrapper {
+  height: 100%;
+}
+
+.metric-card {
+  flex: 1;
+}
+
+/* RESPONSIVE sozlamalar */
+@media (max-width: 1200px) {
+  .youth-header__strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .youth-header__strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .youth-header__strip {
+    grid-template-columns: 1fr;
+  }
+}
+
 .metric-wrapper {
   display: flex;
   flex-direction: column;
